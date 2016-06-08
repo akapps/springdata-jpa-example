@@ -1,4 +1,4 @@
-package org.kapps.test.dao;
+package org.akapps.sample.dao;
 
 import javax.persistence.*;
 import java.util.Objects;

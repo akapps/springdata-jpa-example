@@ -6,7 +6,7 @@
 
     <persistence-unit  name="PersonUnit">
 
-        <class>org.kapps.test.dao.Person</class>
-        <class>org.kapps.test.dao.Pet</class>
+        <class>org.akapps.sample.dao.Person</class>
+        <class>org.akapps.sample.dao.Pet</class>
     </persistence-unit>
 </persistence>

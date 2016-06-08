@@ -7,7 +7,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.kapps.test" level="INFO"/>
+    <logger name="org.akapps.sample" level="INFO"/>
 
     <root level="WARN">
         <appender-ref ref="STDOUT" />

@@ -1,4 +1,4 @@
-package org.kapps.test.jpa;
+package org.akapps.util;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

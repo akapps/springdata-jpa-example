@@ -1,10 +1,10 @@
-package org.kapps.test.dao.repo;
+package org.akapps.sample.dao.repo;
 
+import org.akapps.sample.spring.FullstackConfig;
+import org.akapps.sample.spring.TestDatasourceConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kapps.test.dao.Person;
-import org.kapps.test.spring.FullstackConfig;
-import org.kapps.test.spring.TestDatasourceConfig;
+import org.akapps.sample.dao.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;

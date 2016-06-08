@@ -1,4 +1,4 @@
-package org.kapps.test.spring;
+package org.akapps.sample.spring;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ import java.util.Properties;
  * @author Antoine Kapps
  */
 @Configuration
-@EnableJpaRepositories(basePackages = "org.kapps.test.dao.repo")
+@EnableJpaRepositories(basePackages = "org.akapps.sample.dao.repo")
 public abstract class FullstackConfig {
 
     @Bean(autowire = Autowire.BY_TYPE)
