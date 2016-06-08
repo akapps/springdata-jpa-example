@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kapps.test.dao.Person;
 import org.kapps.test.spring.FullstackConfig;
+import org.kapps.test.spring.TestDatasourceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
@@ -16,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Antoine Kapps
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = FullstackConfig.class)
+@ContextConfiguration(classes = { FullstackConfig.class, TestDatasourceConfig.class})
 public class PersonRepositoryTest {
 
     @Autowired

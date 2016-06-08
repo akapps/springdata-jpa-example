@@ -1,6 +1,6 @@
 package org.kapps.test.spring;
 
-import org.hsqldb.jdbc.JDBCDataSource;
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -20,17 +20,13 @@ import java.util.Properties;
  */
 @Configuration
 @EnableJpaRepositories(basePackages = "org.kapps.test.dao.repo")
-public class FullstackConfig {
+public abstract class FullstackConfig {
 
-    @Bean
-    public DataSource dataSource() {
-        JDBCDataSource ds = new JDBCDataSource();
-        ds.setUrl("jdbc:hsqldb:mem:.");
-        ds.setUser("sa");
-        ds.setPassword("");
+    @Bean(autowire = Autowire.BY_TYPE)
+    public abstract DataSource dataSource();
 
-        return ds;
-    }
+    @Bean(name = "hbm-properties", autowire = Autowire.BY_NAME)
+    public abstract Properties additionalProperties();
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -56,12 +52,5 @@ public class FullstackConfig {
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
         return new PersistenceExceptionTranslationPostProcessor();
-    }
-
-    Properties additionalProperties() {
-        Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
-        return properties;
     }
 }
