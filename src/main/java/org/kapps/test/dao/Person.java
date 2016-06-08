@@ -1,7 +1,7 @@
 package org.kapps.test.dao;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,7 +19,7 @@ public class Person {
 
     private String lastname;
 
-    private Date birthdate;
+    private LocalDate birthdate;
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Pet> friends;
@@ -48,11 +48,11 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

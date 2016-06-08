@@ -3,6 +3,7 @@ package org.kapps.test.spring;
 import org.hsqldb.jdbc.JDBCDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -29,5 +30,10 @@ public class TestDatasourceConfig {
         properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         return properties;
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
     }
 }
